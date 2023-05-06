@@ -1,0 +1,10 @@
+.card.shadow{
+  width: 50%;
+  margin: auto;
+}
+.error-block{
+  color: red;
+}
+.ng-invalid.ng-touched{
+  border-color: red;
+}
