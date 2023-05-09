@@ -10,7 +10,9 @@ import { PropertyListComponent } from './Components/Property/property-list/prope
 import { AddPropertyComponent } from './Components/Property/add-property/add-property.component';
 import { PropertyDetailComponent } from './Components/Property/property-detail/property-detail.component';
 import { ErrorPageComponent } from './Components/error-page/error-page.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './Components/User/register/register.component';
+import { LoginComponent } from './Components/User/login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,16 @@ import { FormsModule } from '@angular/forms';
     PropertyListComponent,
     AddPropertyComponent,
     PropertyDetailComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
