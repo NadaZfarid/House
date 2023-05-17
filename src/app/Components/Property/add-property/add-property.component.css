@@ -1,6 +1,10 @@
-.card.shadow{
-  width: 50%;
-  margin: auto;
+.row>*{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.shadow2 {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  margin-left: 10px;
 }
 .error-block{
   color: red;

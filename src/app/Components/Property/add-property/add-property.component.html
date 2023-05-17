@@ -1,49 +1,171 @@
 <!-- Template Driven Forms -->
+<div class="row">
+  <div class="col-8">
+  <div class="card shadow ">
+    <div class="card-header bg-primary text-light">
+      List Your Property
+    </div>
+    <div class="card-body">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Basic Info</button>
+          <button class="nav-link" id="nav-pricing-tab" data-bs-toggle="tab" data-bs-target="#nav-pricing" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Pricing & Area</button>
+          <button class="nav-link" id="nav-address-tab" data-bs-toggle="tab" data-bs-target="#nav-address" type="button" role="tab" aria-controls="nav-address" aria-selected="false">Address</button>
+          <button class="nav-link" id="nav-other-tab" data-bs-toggle="tab" data-bs-target="#nav-other" type="button" role="tab" aria-controls="nav-other" aria-selected="false">Other Details</button>
+          <button class="nav-link" id="nav-photo-tab" data-bs-toggle="tab" data-bs-target="#nav-photo" type="button" role="tab" aria-controls="nav-photo" aria-selected="false" >Photos</button>
+        </div>
+      </nav>
+      <div class="tab-content mt-3" id="nav-tabContent">
+        <div class="tab-pane fade show active p-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+          <h5 class="text-secondary">I want to</h5>
 
-<div class="card shadow">
-  <div class="card-header">
-    Add New Property
+          <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="sellRent" id="sell" autocomplete="off" >
+            <label class="btn btn-outline-primary" for="sell">Sell</label>
+
+            <input type="radio" class="btn-check" name="sellRent" id="rent" autocomplete="off">
+            <label class="btn btn-outline-primary" for="rent">Rent</label>
+          </div>
+
+          <h5 class="text-secondary pt-4">Type of Property</h5>
+
+          <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="typeOfProp" id="house" autocomplete="off" >
+            <label class="btn btn-outline-primary" for="house">House</label>
+
+            <input type="radio" class="btn-check" name="typeOfProp" id="apartment" autocomplete="off">
+            <label class="btn btn-outline-primary" for="apartment">Apartment</label>
+
+            <input type="radio" class="btn-check" name="typeOfProp" id="duplex" autocomplete="off">
+            <label class="btn btn-outline-primary" for="duplex">Duplex</label>
+
+            <input type="radio" class="btn-check" name="typeOfProp" id="villa" autocomplete="off">
+            <label class="btn btn-outline-primary" for="villa">Villa</label>
+          </div>
+
+          <h5 class="text-secondary pt-4">Furnish type</h5>
+
+          <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="furnish" id="fully" autocomplete="off" >
+            <label class="btn btn-outline-primary" for="fully">Fully</label>
+
+            <input type="radio" class="btn-check" name="furnish" id="semi" autocomplete="off">
+            <label class="btn btn-outline-primary" for="semi">Semi</label>
+
+            <input type="radio" class="btn-check" name="furnish" id="unfurnish" autocomplete="off">
+            <label class="btn btn-outline-primary" for="unfurnish">Unfurinshed</label>
+
+          </div>
+
+          <div class=" pt-4">
+            <input type="text" placeholder="in Building" class="form-control">
+          </div>
+
+          <div class=" pt-4 mb-4">
+            <input type="text" placeholder="City" class="form-control" >
+          </div>
+
+          <input type="button" value="Next" class="btn btn-primary form-control">
+        </div>
+        <div class="tab-pane fade p-3" id="nav-pricing" role="tabpanel" aria-labelledby="nav-pricing-tab" tabindex="0">
+          <div class="mt-2">
+            <input type="text" placeholder="Rent (in L.E)" class="form-control">
+          </div>
+
+          <div class="mt-4">
+            <input type="text" placeholder="Security (in L.E)" class="form-control">
+          </div>
+
+          <div class="mt-4">
+            <input type="text" placeholder="Maintenance (in L.E)" class="form-control">
+          </div>
+
+          <div class="mt-4">
+            <input type="text" placeholder="Build Area" class="form-control">
+          </div>
+
+          <div class="mt-4">
+            <input type="text" placeholder="Carpet Area" class="form-control">
+          </div>
+
+          <div class="mt-4">
+            <input type="button"   class="form-control btn btn-primary mb-2" value="Next">
+            <input type="button"   class="form-control btn btn-primary" value="Back">
+          </div>
+        </div>
+        <div class="tab-pane fade" id="nav-address" role="tabpanel" aria-labelledby="nav-address-tab" tabindex="0">...</div>
+        <div class="tab-pane fade" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab" tabindex="0">...</div>
+        <div class="tab-pane fade" id="nav-photo" role="tabpanel" aria-labelledby="nav-photo-tab" tabindex="0">...</div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="card-body">
+      <form (submit)="onSubmit(Form)" #Form="ngForm">
+        <div class="form-group col-12 mt-2">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" #propName="ngModel" ngModel name="Name" required minlength="3">
+          <span class="error-block" *ngIf="!propName.valid && propName.touched" >
+            <span *ngIf="propName.errors?.['required']" >Please Enter Name of the property
+            </span>
+            <span *ngIf="propName.errors?.['minlength']" >Name must be at least 3 char
+            </span>
+          </span>
+        </div>
+
+        <div class="form-group col-12 mt-4 ">
+          <label for="type">Type</label>
+          <input type="text" class="form-control" #propType="ngModel" ngModel name="type" required minlength="4">
+          <span class="error-block" *ngIf="!propType.valid && propType.touched" >
+            <span *ngIf="propType.errors?.['required']" >Please Enter Type of the property
+            </span>
+            <span *ngIf="propType.errors?.['minlength']" >Type must be at least 3 char
+            </span>
+          </span>
+        </div>
+
+        <div class="form-group col-12 mt-4">
+          <label for="price">Price</label>
+          <input type="number" class="form-control" #propPrice="ngModel" ngModel name="Price" required min="100">
+          <span class="error-block" *ngIf="!propPrice.valid && propPrice.touched" >
+            <span *ngIf="propPrice.errors?.['required']" >Please Enter Price of the property
+            </span>
+            <span *ngIf="propPrice.errors?.['min']" >Price must be more than 100
+            </span>
+          </span>
+        </div>
+
+        <div class="form-group col-12 mt-4 text-center">
+          <button [disabled]="!Form.valid" type="submit" class="btn btn-primary m-4">Save</button>
+          <button type="reset" class="btn btn-secondary">Cancel</button>
+        </div>
+      </form>
+    </div> -->
+
   </div>
-  <div class="card-body">
-    <form (submit)="onSubmit(Form)" #Form="ngForm">
-      <div class="form-group col-12 mt-2">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" #propName="ngModel" ngModel name="Name" required minlength="3">
-        <span class="error-block" *ngIf="!propName.valid && propName.touched" >
-          <span *ngIf="propName.errors?.['required']" >Please Enter Name of the property
-          </span>
-          <span *ngIf="propName.errors?.['minlength']" >Name must be at least 3 char
-          </span>
-        </span>
-      </div>
+</div>
 
-      <div class="form-group col-12 mt-4 ">
-        <label for="type">Type</label>
-        <input type="text" class="form-control" #propType="ngModel" ngModel name="type" required minlength="4">
-        <span class="error-block" *ngIf="!propType.valid && propType.touched" >
-          <span *ngIf="propType.errors?.['required']" >Please Enter Type of the property
-          </span>
-          <span *ngIf="propType.errors?.['minlength']" >Type must be at least 3 char
-          </span>
-        </span>
-      </div>
+  <div class="col-4 ">
+  <div class="card shadow2 leftCard" >
+    <div class="card-header bg-primary text-light">
+      Your Property Preview
+    </div>
+    <div class="card-body">
 
-      <div class="form-group col-12 mt-4">
-        <label for="price">Price</label>
-        <input type="number" class="form-control" #propPrice="ngModel" ngModel name="Price" required min="100">
-        <span class="error-block" *ngIf="!propPrice.valid && propPrice.touched" >
-          <span *ngIf="propPrice.errors?.['required']" >Please Enter Price of the property
-          </span>
-          <span *ngIf="propPrice.errors?.['min']" >Price must be more than 100
-          </span>
-        </span>
-      </div>
-
-      <div class="form-group col-12 mt-4 text-center">
-        <button [disabled]="!Form.valid" type="submit" class="btn btn-primary m-4">Save</button>
-        <button type="reset" class="btn btn-secondary">Cancel</button>
-      </div>
-    </form>
+    </div>
   </div>
+</div>
 
 </div>

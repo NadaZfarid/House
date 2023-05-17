@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { User } from 'src/app/Models/user';
+import { AlertService } from 'src/app/Services/alert.service';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -7,8 +10,10 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+  user!:User;
+  userSubmit:boolean=false;
 
-  constructor(private fb:FormBuilder){
+  constructor(private fb:FormBuilder, private userService:UserService, private alertService:AlertService){
 
   }
   form= this.fb.group({
@@ -40,9 +45,32 @@ export class RegisterComponent {
   get Mobile(){
     return this.form.get('Mobile') as FormControl;
   }
+
+  userData():User{
+    return this.user={
+      userName:this.userName.value,
+      email:this.Email.value,
+      password:this.Password.value,
+      mobile:this.Mobile.value
+    }
+  }
   onSubmit(){
     console.log(this.form);
 
+    //this.user= Object.assign(this.user,this.form.value);
+    if(this.form.valid)
+    {
+      this.userSubmit=false;
+      this.userService.addUser(this.userData());
+      this.form.reset();
+      this.alertService.success("Register is Successful")
+    }else{
+      this.alertService.error("Please enter valid info");
+      this.userSubmit=true;
+      console.log(this.userSubmit);
+
+    }
   }
+
 
 }

@@ -1,1 +1,51 @@
-<p>login works!</p>
+<!-- Reactive Forms -->
+
+<div class="card shadow">
+  <div class="card-header bg-primary text-white">
+     Register
+  </div>
+  <div class="card-body ">
+    <form (submit)="onSubmit()" [formGroup]="loginForm" >
+
+
+      <div class="form-group col-12 mt-4 ">
+        <label for="Email">Email</label>
+        <input type="email" class="form-control"  formControlName="Email" >
+        <span class="error-block" *ngIf="!Email.valid && (Email.touched || userSubmit)" >
+          <i class="bi bi-exclamation-circle-fill" ></i>
+
+          <span *ngIf="Email.errors?.['required']" > Please Enter your email
+          </span>
+          <span *ngIf="Email.errors?.['email']" > Please Enter valid email
+          </span>
+
+        </span>
+      </div>
+
+
+        <div class="form-group col-12 mt-4">
+          <label for="Password">Password</label>
+          <input type="password" class="form-control"  formControlName="Password" >
+
+          <span class="error-block" *ngIf="!Password.valid && (Password.touched || userSubmit)" >
+            <i class="bi bi-exclamation-circle-fill" ></i>
+            <span *ngIf="Password.errors?.['required']" > Please Enter valid Password
+            </span>
+            <span *ngIf="Password.errors?.['minlength']" > Password must be more than 5
+            </span>
+          </span>
+        </div>
+
+
+
+      <div class="form-group col-12 mt-4 text-center">
+
+        <button  type="submit" class="btn btn-primary m-4">Save</button>
+
+        <button type="reset" class="btn btn-secondary">Cancel</button>
+
+      </div>
+    </form>
+  </div>
+
+</div>
