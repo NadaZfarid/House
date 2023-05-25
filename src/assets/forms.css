@@ -1,0 +1,9 @@
+.error-block{
+  color: red;
+}
+.ng-invalid.ng-touched{
+  border-color: red;
+}
+ .btn-group > input [ng-reflect-btn-radio]{
+  border-radius: 44px;
+ }

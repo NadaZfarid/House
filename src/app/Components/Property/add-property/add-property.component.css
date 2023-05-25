@@ -12,3 +12,12 @@
 .ng-invalid.ng-touched{
   border-color: red;
 }
+.card-img-top{
+  height: 250px;
+}
+.photo-control{
+  min-height: 300px;
+  border: 1px dashed blue;
+  text-align: center;
+  margin: 5px;
+}

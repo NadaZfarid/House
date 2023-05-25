@@ -8,6 +8,9 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./add-property.component.css']
 })
 export class AddPropertyComponent {
+
+  propertyType:Array<string>=["House", "Apartment", "Duplex",'Villa']
+  furnisheType:Array<string>=["Fully", "Semi", "Unfurnished"]
   constructor(private router:Router){}
   onBack(){
     this.router.navigate([''])
